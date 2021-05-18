@@ -1,0 +1,29 @@
+**********
+task 10.3:
+
+What are the effects?
+
+Simpler models lead to worse performance, overall, but also more consistency over the various datasets (training, test and validation). As for the nonlinearity, using wavelets makes results very dependent on the number of wavelets actually used. Using Hammerstein-Wiener the results are still quite ok, but degrading too.
+
+Why?
+
+The complexity of a model affects how much bias and how much variance the estimator will have. Reducing the model complexity implies getting a lower variance and higher bias, and increasing the chance of underfitting. Viceversa, increasing the model complexity implies getting a higher variance and lower bias, and increasing the chance of overfitting.
+
+
+**********
+task 10.4:
+
+What happens to the performance of the various estimators if we use z3 as training and z1 as validation?
+
+Depending on the actual configuration used, the performances may both improve a bit, or decrease a bit.
+
+Why?
+
+The excitation levels of the inputs in z3 are higher than the ones in z1. So there is this situation:
+
+- in a sense, z3 spans a wider area in the inputs space, and this is generally useful for training purposes; however the number of samples per "raise / fall" event is smaller (in the sense that the system may not see the full swing)
+
+- z1 is instead the contrary.
+
+Thus for these specific datasets both thing may happen, depending on the used model
+
